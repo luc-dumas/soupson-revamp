@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "lux-design-system": {
+      "signature": "e646bd59fa0114e0885704854746b31b",
+      "file": true
+    }
+  }
+}
