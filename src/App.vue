@@ -6,25 +6,32 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <!-- <header> -->
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  Hello
 
-    <div class="wrapper">
+  <!-- you can pass in a smaller `width` and `height` as props -->
+  <lux-icon-base width="12" height="12" icon-name="Add Item">
+    <lux-icon-add></lux-icon-add>
+  </lux-icon-base>
+
+  
+    <!-- <div class="wrapper"> -->
       <!-- <HelloWorld msg="You did it!" /> -->
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-    </div>
+    <!-- </div> -->
   <!-- </header> -->
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
   max-height: 100vh;
-}
+} */
 
 /* .logo {
   display: block;
