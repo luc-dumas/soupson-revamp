@@ -5,12 +5,12 @@ import NavBar from './components/NavBar.vue'
 
 <template>
     <NavBar class="nav-bar"/>
-    <RouterView />
+    <!-- <RouterView /> -->
 </template>
 
 <style scoped>
-  /* .nav-bar {
-    background-color: violet;
+  .nav-bar {
+    /* background-color: violet; */
     
-  } */
+  }
 </style>

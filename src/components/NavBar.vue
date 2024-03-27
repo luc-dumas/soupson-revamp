@@ -1,14 +1,44 @@
 <template>
-  <lux-grid-container class="grid-container">
-    <lux-grid-item><RouterLink to="/"><p>Soupcon Salon</p></RouterLink></lux-grid-item>
-    <lux-grid-item><RouterLink to="/">NavButton 1</RouterLink></lux-grid-item>
-    <lux-grid-item><RouterLink to="/about">NavButton 2</RouterLink></lux-grid-item>
-    <lux-grid-item><RouterLink to="/">NavButton 3</RouterLink></lux-grid-item>
-    <lux-grid-item><RouterLink to="/about">NavButton 4</RouterLink></lux-grid-item>
-
-  </lux-grid-container>
- 
+  <div class="container">
+    <div class="item logo">
+      <RouterLink to="/">
+        <div class="item-text">
+          Soupcon Salon
+        </div>
+      </RouterLink>
+    </div>
+    <div class="item">
+      <RouterLink to="/">
+        <div class="item-text">
+          NavButton 1
+        </div>  
+      </RouterLink>
+    </div>
+    <div class="item">
+      <RouterLink to="/about">
+        <div class="item-text">
+          NavButton 2
+        </div>
+      </RouterLink>
+    </div>
+    <div class="item">
+      <RouterLink to="/">
+        <div class="item-text">
+          NavButton 3
+        </div>
+      </RouterLink>
+    </div>
+    <div class="item">
+      <RouterLink to="/about">
+        <div class="item-text">
+          NavButton 4
+        </div>
+      </RouterLink>
+    </div>
+  </div>
 </template>
+
+
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
@@ -33,9 +63,31 @@ export default {
 </script>
 
 <style>
-  .grid-container {
-    /* background-color: violet;  */
-    /* width: 100%; */
+ 
+  .container {
+    /* background-color: red; */
+    display: flex;
+    /* flex-wrap: wrap;  */
+    padding: 8px 12px 0px 12px;
+    gap: 4px;
+    height: 35px;
+  }
+
+  .item {
+    text-decoration: none;
+    /* background-color:blue; */
+    /* border: 1px dotted black; */
+  }
+
+  .item-text {
+    /* background-color: green; */
+  }
+
+  .logo {
+    /* background-color: green; */
+    flex-grow: 1;
+    font-size: 1.5rem;
+    /* font-family: "Averia Serif Libre" !important; */
   }
   /* nav {
     width: 100%;
