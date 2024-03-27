@@ -60,12 +60,15 @@
 
 body {
   min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
+  margin: 0;
   color: var(--color-text);
   background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
-  line-height: 1.6;
+  /* line-height: 1.6;
   font-family:
     Inter,
     -apple-system,
@@ -78,8 +81,8 @@ body {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
+    sans-serif; */
+  /* font-size: 15px; */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

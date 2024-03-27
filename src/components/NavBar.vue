@@ -1,9 +1,13 @@
 <template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </nav>
-  <RouterView />
+  <lux-grid-container class="grid-container">
+    <lux-grid-item><RouterLink to="/"><p>Soupcon Salon</p></RouterLink></lux-grid-item>
+    <lux-grid-item><RouterLink to="/">NavButton 1</RouterLink></lux-grid-item>
+    <lux-grid-item><RouterLink to="/about">NavButton 2</RouterLink></lux-grid-item>
+    <lux-grid-item><RouterLink to="/">NavButton 3</RouterLink></lux-grid-item>
+    <lux-grid-item><RouterLink to="/about">NavButton 4</RouterLink></lux-grid-item>
+
+  </lux-grid-container>
+ 
 </template>
 
 <script>
@@ -29,7 +33,11 @@ export default {
 </script>
 
 <style>
-  nav {
+  .grid-container {
+    /* background-color: violet;  */
+    /* width: 100%; */
+  }
+  /* nav {
     width: 100%;
     font-size: 12px;
     text-align: center;
@@ -52,7 +60,7 @@ export default {
 
   nav a:first-of-type {
     border: 0;
-  }
+  } */
 
   @media (min-width: 1024px) {
   }
