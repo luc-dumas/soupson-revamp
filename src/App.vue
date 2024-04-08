@@ -36,8 +36,7 @@ export default {
 
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
+.v-enter-active {
   transition: opacity 0.75s ease;
 }
 
@@ -47,7 +46,9 @@ export default {
 }
 
   .whole-page {
+    /* background-color: orange; */
   }
+
   .nav-bar {
     position: fixed;
     top: 0;

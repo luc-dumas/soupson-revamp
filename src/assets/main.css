@@ -10,7 +10,8 @@
   
 }
 body {
-  /* background-color: #01004E; */
+  background-color: rgb(225, 225, 225);;
+  /* background-color: pink; */
   /* background-color: #01004E; */
   overflow-x: hidden; /* Should probably address the route issue here */
 }
