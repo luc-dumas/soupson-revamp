@@ -11,15 +11,36 @@
     </div>
 
     <div v-if="!showCardView">
-      <div
+      <!-- <div
         v-for="(item, index) in events"
         :key="index"
         class="event-list" 
       >
-          <p>{{formatDate(item.event_date)}}</p>
-          <h2>{{item.event_name}}</h2>
-          <p>{{item.event_details}}</p>
-      </div>
+        <p>{{ formatDate(item.event_date) }}</p>
+        <h2>{{ item.event_name }}</h2>
+        <p>{{item.event_details}}</p>
+      </div> -->
+      <lux-card id="b" size="full-width" v-for="(item, index) in events"
+        :key="index">
+        <lux-card-media>
+          <lux-icon-base width="50" height="50" icon-hide="true">
+            <lux-icon-globe></lux-icon-globe>
+          </lux-icon-base>
+        </lux-card-media>
+        <lux-card-header>
+          <!-- Hyperlink is the text screen readers would read, we don't want to wrap the entire card -->
+          <lux-heading level="h2" size="h3"><lux-hyperlink href="#">Code4Lib - Trip ID 1234</lux-hyperlink></lux-heading>
+          <lux-text-style>Jan 9, 2019 to Jan 16, 2019</lux-text-style>
+        </lux-card-header>
+        <lux-card-content>
+          <lux-tag type="tag" :tag-items="[
+            {name: 'Pending', color: 'yellow', style: 'pill'}
+            ]"
+            horizontal="end"
+            size="small"/>
+          <lux-text-style type="span" variation="small">Last Updated on Dec 15, 2018</lux-text-style>
+        </lux-card-content>
+      </lux-card>
       
     </div>
 

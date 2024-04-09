@@ -1,4 +1,13 @@
-export default {
+import axios from axios;
+
+export const eventsActions = {
+  async fetchEvents({ commit }) {
+    const events = await this.$axios.$get('events');
+    commit('SET_EVENTS', events);
+    return events;
+  },
+
+
   // updateUserData({
   //   rootGetters,
   //   commit,
@@ -11,3 +20,5 @@ export default {
   //   return user;
   // },
 };
+
+export default eventsActions;
