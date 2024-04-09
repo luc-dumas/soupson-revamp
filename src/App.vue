@@ -18,18 +18,13 @@ import NavBar from './components/NavBar.vue'
 export default {
   data() {
     return {
-      // show: false
     };
   },
   methods: {
-    // toggle() {
-    //   this.show = !this.show;
-    // }
+
   },
   mounted() {
-    // setTimeout(() => {
-    //   this.toggle();
-    // }, 500);
+
   },
 };
 </script>
