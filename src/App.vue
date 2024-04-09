@@ -1,13 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+// import { RouterLink, RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
   <div class="whole-page">
-    <!-- <Transition> -->
+    <div class="nav-bar-placeholder">
       <NavBar class="nav-bar"/>
-    <!-- </Transition> -->
+    </div> 
     <Transition>
       <RouterView />
     </Transition>
@@ -48,11 +48,14 @@ export default {
   .whole-page {
     /* background-color: orange; */
   }
-
+  .nav-bar-placeholder {
+    height: 32px;
+  }
   .nav-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+    z-index: 1000;
   }
 </style>
