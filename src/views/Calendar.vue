@@ -9,6 +9,9 @@
           </label>
         </div>
     </div>
+  <div>
+
+  </div>
 
     <div v-if="!showCardView">
       <!-- <div
@@ -64,8 +67,9 @@
 </template>
 
 <script>
-import moment from 'moment';
 
+import { useEventsStore } from '@/stores/events';
+import moment from 'moment';
 
 export default {
   name: 'Calendar',
@@ -74,192 +78,26 @@ export default {
   props: {
   },
   data() {
-    return {
+    const events = useEventsStore();
+    return {  
       showCardView: false,
-      events: 
-        [
-          {
-            event_name: "New Event Title Here",
-            event_details: "Event Description goes here. Explain all about your event in here. ",
-            event_date: "2024-03-22 17:30:21.000000",
-            event_image: null,
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Event",
-            event_details: "foobar",
-            event_date: "2024-04-19 17:30:34.000000",
-            event_image: null,
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "Foo",
-            event_details: "Bar",
-            event_date: "2024-05-24 17:30:51.000000",
-            event_image: null,
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Event",
-            event_details: "This is a very special event. ",
-            event_date: "2024-04-30 14:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-event.png",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "XYZ Event",
-            event_details: "Those Looks play the Thunderdome!",
-            event_date: "2024-04-30 15:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/xyz-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-          {
-            event_name: "My Big Event",
-            event_details: "*Friday, April 19, 2024 5:30 PM*\r\n\r\n---\r\n\r\n* 5:30pm **Hollow Howl** - Cathartic New Wave Psych Rock\r\n\r\n* 6:30pm **The Swiss Guard** - Lyrics that make you think. Music that makes you move.\r\n\r\n* 7:30pm **Christina Ward** - Ethereal mermaid shreds guitar with legendary backing band. \r\n\r\n---\r\n\r\n",
-            event_date: "2024-04-24 16:00:00.000000",
-            event_image: "\/partners\/imgs\/events\/my-big-event.jpeg",
-            event_soupcon: true,
-            event_host: "Lambertville Area Music Collective",
-            event_author: "John Doe",
-            event_venue: "Union Coffee",
-            venue_address: "25 North Union Street, Lambertville, NJ 08530"
-          },
-      ],
+      events: [{
+        event_date: '2021-09-01',
+        event_name: 'Event 1',
+      }],
     }
   },
   computed: {
+    totalEvents() {
+      const events = useEventsStore();
+      return events.length;
+    }
   },
   methods: {
+    getEvents() {
+      const events = useEventsStore();
+      events.fetchEvents();
+    },
     toggle() {
       console.log('toggle')
     },
@@ -268,7 +106,13 @@ export default {
     }
   },
   async created() {
-    console.log('transformedEvents', this.transformedEvents)
+  },
+  async mounted() {
+    try {
+      this.events = await this.getEvents();
+    } catch (error) {
+      console.log('error', error)
+    }
   },
   watch: {
     showCardView: {

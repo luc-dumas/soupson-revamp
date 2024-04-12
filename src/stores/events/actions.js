@@ -1,11 +1,20 @@
+import api from '../../services/api';
 import axios from axios;
 
-export const eventsActions = {
-  async fetchEvents({ commit }) {
-    const events = await this.$axios.$get('events');
-    commit('SET_EVENTS', events);
+const actions = {
+  async fetchEvents( context ) {
+    const events = await api.getEvents();
+    context.commit('SET_EVENTS', events);
     return events;
   },
+};
+
+// export const eventsActions = {
+//   async fetchEvents({ commit }) {
+//     const events = await this.api.getEvents();
+//     commit('SET_EVENTS', events);
+//     return events;
+//   },
 
 
   // updateUserData({
@@ -19,6 +28,6 @@ export const eventsActions = {
   //   }
   //   return user;
   // },
-};
+// };
 
-export default eventsActions;
+export default actions;

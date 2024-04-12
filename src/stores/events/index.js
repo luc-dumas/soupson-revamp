@@ -1,12 +1,15 @@
-import { eventsState } from './state';
-// import getters from './getters';
-import { eventsMutations } from './mutations';
-import actions from './actions';
+import { defineStore } from 'pinia';
+import api from '../../services/api';
 
-export default {
-  namespaced: true,
-  state,
-  // getters,
-  mutations,
-  actions,
-};
+export const useEventsStore = defineStore('events', {
+  state: () => ({
+    events: [],
+  }),
+  actions: {
+    async fetchEvents( ) {
+      console.log('is this hit?')
+      const events = await api.getEvents();
+      this.events = events;
+    },
+  },
+})
